@@ -16,17 +16,21 @@ const AvatarCircles = ({ className, avatarUrls }: AvatarCirclesProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col items-center gap-2 min-h-36">
-      <div className={cn("flex -space-x-3 rtl:space-x-reverse", className)}>
+    <div className="flex flex-col items-center justify-center gap-2 h-full">
+      <div
+        className={cn(
+          "flex -space-x-3 rtl:space-x-reverse absolute",
+          className
+        )}
+      >
         {avatarUrls.map((avatar, index) => (
           <motion.div
             key={index}
-            className="h-16 w-16 rounded-full border-4 border-white dark:border-[#242424] overflow-hidden z-10"
+            className="h-16 w-16 rounded-full border-4 border-background dark:border-foreground overflow-hidden z-10"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             whileHover={{
               y: -7,
-              boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)",
             }}
             transition={{
               type: "spring",
@@ -46,14 +50,16 @@ const AvatarCircles = ({ className, avatarUrls }: AvatarCirclesProps) => {
       </div>
       {hoveredIndex !== null && (
         <motion.div
-          className="flex flex-row rounded-full w-full p-4 border gap-2 divide-x"
+          className="flex flex-row rounded-full p-4 bg-accent-foreground dark:bg-accent gap-2 divide-x mt-36"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2 }}
         >
-          <p className="font-bold">{avatarUrls[hoveredIndex].name}</p>
-          <p className="font-medium text-neutral-500 px-2">
+          <p className="font-semibold text-accent dark:text-accent-foreground">
+            {avatarUrls[hoveredIndex].name}
+          </p>
+          <p className="text-muted-foreground px-2">
             {avatarUrls[hoveredIndex].position}
           </p>
         </motion.div>
