@@ -1,50 +1,18 @@
-# React + TypeScript + Vite
+# Avatar Circles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Avatar Circles is an animated UI component that displays overlapping avatar circles. When a user hovers over an avatar, their details are revealed. The component supports both Dark and Light modes for seamless theme integration. Just pass a name, a position and a picture for the avatars and see the magic happens!
 
-Currently, two official plugins are available:
+## Tech stack
+- Vite
+- TypeScript
+- Framer-motion
+- TailwindCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Dark Mode
+![dark mode](https://github.com/user-attachments/assets/4082055f-ba97-43d6-9099-141c39835f6f)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Light Mode
+![light mode](https://github.com/user-attachments/assets/cf2e1dae-5c39-4bd1-a7b2-f502f743ff37)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
