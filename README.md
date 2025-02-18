@@ -10,7 +10,7 @@ Avatar Circles is an animated UI component that displays overlapping avatar circ
 
 
 ## Preview
-Check out the [Live Demo](https://sepidev.vercel.app/avatar-circles)
+Check out the [Live Demo](https://avatar-circles.vercel.app/)
 
 #### Dark Mode
 ![dark mode](https://github.com/user-attachments/assets/4082055f-ba97-43d6-9099-141c39835f6f)
